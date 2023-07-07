@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>25-29 PFL 01A - THE CANARY APARTMENT</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		body {
+			background-image: url('header.jpg');
+    			background-repeat: no-repeat;
+    			background-size: cover;
+			background-position: center center;
+		}
+		.title {
+			flex: 1;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+   		.title {
+     			 color: #fff;
+    		}
+		.login-container {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+		.login {
+			width: 50%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.login input[type="text"],
+		.login input[type="password"] {
+			display: block;
+			margin-bottom: 10px;
+			width: 100%;
+			padding: 5px;
+			font-size: 16px;
+		}
+		.login input[type="submit"] {
+			display: block;
+			width: 50%;
+			padding: 5px;
+			background-color: #ff0004;
+			color: white;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		}
+		.mapping {
+			clear: both;
+			display: block;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: #ff0004;
+			color: white;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		}
+   		.login h2 {
+     			color: #fff;
+    		}
+	</style>
+</head>
+<body>
+	<div class="title">
+		<h1>25-29 PFL 01A</h1>
+		<h2>THE CANARY APARTMENT</h2>
+		<p>Produksi: 15 MARET 2023</p>
+		<p>Tampak Utara</p>
+		<button class="mapping" onclick="window.open('https://docs.google.com/spreadsheets/d/1_AMhrruEGObIY7Z9HLqh1FjcdNKnwFzbQbg3B6jE0S8/edit#gid=587438629', '_blank');">Mapping</button>
+	</div>
+	<div class="login-container">
+		<div class="login">
+			<h2>Login</h2>
+			<form id="loginForm" onsubmit="return validateForm()">
+				<input type="text" id="username" name="username" placeholder="Username">
+				<input type="password" id="password" name="password" placeholder="Password">
+				<input type="submit" value="Login">
+			</form>
+			<p id="warning" style="color:red;display:none;">Username/password salah!</p>
+		</div>
+	</div>
+	<script>
+		function validateForm() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			if (username === "pci" && password === "123456") {
+				window.location.href = "new-page.html";
+				return false;
+			} else {
+				document.getElementById("warning").style.display = "block";
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
